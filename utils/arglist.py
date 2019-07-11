@@ -2,8 +2,12 @@ import numpy as np
 import torch
 from pysc2.lib import actions
 
-DEVICE = torch.device('cpu')
 
+
+'''
+shared parameters
+'''
+DEVICE = torch.device('cuda:0')
 SEED = 1234
 FEAT2DSIZE = 64
 NUM_ACTIONS = len(actions.FUNCTIONS)
@@ -24,7 +28,7 @@ class DDPG:
     TAU = 0.001
     LEARNINGRATE = 0.001
     BatchSize = 5
-    memory_limit = int(1e2)
+    memory_limit = 1e2
 
 
 # PPO parameters
@@ -38,4 +42,4 @@ class PPO:
     l2_rate = 0.001
     max_kl = 0.01
     clip_param = 0.2
-    memory_limit = int(1e2)
+    memory_limit = 1e2

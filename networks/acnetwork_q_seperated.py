@@ -8,8 +8,9 @@ import torch.nn as nn
 from utils import arglist
 from utils.layers import TimeDistributed, Flatten, Dense2Conv, init_weights
 
-
+#minimap : height_map, visibility, creep, camera, player_id, player_relative, selected
 minimap_channels = 7
+#screen : height_map, visibility, creep, camera, player_id, player_relative, selected, hit_points, energy, shields, unit_density, unit_density_aa(anti-aliased)
 screen_channels = 17
 
 # apply paddinga as 'same', padding = (kernel - 1)/2
